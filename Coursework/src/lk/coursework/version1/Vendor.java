@@ -15,6 +15,15 @@ public class Vendor implements Runnable {
 
     @Override
     public void run() {
-
+        while(true){
+            try{
+                Thread.sleep(ticketReleaseRate);
+                Ticket ticket = new Ticket();
+                ticketCollection.addTicket(ticket);
+            }
+            catch(InterruptedException e){
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 }
