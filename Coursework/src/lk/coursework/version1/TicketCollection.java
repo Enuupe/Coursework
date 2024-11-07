@@ -18,7 +18,7 @@ public class TicketCollection extends Configuration{
     private Map<String, Double> Eventprices = new HashMap<>(); // to store the prices according to the event
 
     // constructor
-    private TicketCollection() {
+    TicketCollection() {
         super();
     }
 
@@ -49,7 +49,7 @@ public class TicketCollection extends Configuration{
         }
     }
 
-    public synchronized Ticket GetTicket() {
+    public synchronized Ticket RemoveTicket() {
 
         lock.lock();
         try {

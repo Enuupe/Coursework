@@ -7,26 +7,41 @@ public class Configuration {
     private int customerRetrievalRate;
     private int maxTicketCapacity;
 
-
-    public void input(){
-        Scanner in = new Scanner(System.in);
-
-        System.out.println("Enter total amount of tickets: ");
-        this.totalTickets = validation(in);
-
-        System.out.println("Enter the ticket release rate: ");
-        this.ticketReleaseRate = validation(in);
-
-        System.out.println("Enter the ticket retrieval rate of the customer: ");
-        this.customerRetrievalRate = validation(in);
-
-        System.out.println("Enter the maximum ticket capacity: ");
-        this.maxTicketCapacity = validation(in);
-
+    public int getTotalTickets(){
+        return totalTickets;
     }
 
+    public int getTicketReleaseRate(){
+        return ticketReleaseRate;
+    }
+
+    public int getCustomerRetrievalRate(){
+        return customerRetrievalRate;
+    }
+
+    public int getMaxTicketCapacity(){
+        return maxTicketCapacity;
+    }
+
+    public void setTotalTickets(int totalTickets){
+        this.totalTickets = totalTickets;
+    }
+
+    public void setTicketReleaseRate(int ticketReleaseRate){
+        this.ticketReleaseRate = ticketReleaseRate;
+    }
+
+    public void setCustomerRetrievalRate(int customerRetrievalRate){
+        this.customerRetrievalRate = customerRetrievalRate;
+    }
+
+    public void setMaxTicketCapacity(int maxTicketCapacity){
+        this.maxTicketCapacity = maxTicketCapacity;
+    }
+
+
     //validation of the inputs
-    private static int validation(Scanner in){
+    static int validation(Scanner in){
         while(true) {
             if (in.hasNextInt()) {
                 int value = in.nextInt();

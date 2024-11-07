@@ -17,11 +17,14 @@ public class Vendor implements Runnable {
     public void run() {
         while(true){
             try{
-                Thread.sleep(ticketReleaseRate);
-                Ticket ticket = new Ticket();
-                ticketCollection.addTicket(ticket);
+                while(!Thread.currentThread().isInterrupted()) {
+                    Ticket ticket = new Ticket();
+                    ticketCollection.addTicket(ticket);
+                    Thread.sleep(ticketReleaseRate);
+                }
             }
             catch(InterruptedException e){
+                System.out.println("The thread is interrupted. Stopping thread");
                 Thread.currentThread().interrupt();
             }
         }
