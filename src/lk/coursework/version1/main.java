@@ -28,8 +28,9 @@ public class main {
     }
 
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
         input();
+        
+        Scanner scanner = new Scanner(System.in);
 
         ticketCollection = new TicketCollection(config.getTotalTickets(), config.getMaxTicketCapacity());
 
