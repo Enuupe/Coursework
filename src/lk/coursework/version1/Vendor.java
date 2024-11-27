@@ -7,8 +7,7 @@ public class Vendor implements Runnable {
     private TicketCollection ticketCollection;
     private int ticketReleaseRate;
 
-    public Vendor(Map<String, Double> Eventptices, TicketCollection ticketCollection, int ticketReleaseRate) {
-        this.Eventprices = Eventptices;
+    public Vendor(TicketCollection ticketCollection, int ticketReleaseRate) {
         this.ticketCollection = ticketCollection;
         this.ticketReleaseRate = ticketReleaseRate;
     }

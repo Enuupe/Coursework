@@ -14,7 +14,7 @@ public class Customer implements Runnable{
         try{
             while(!Thread.currentThread().isInterrupted()){
                 Ticket ticket = new Ticket();
-                ticketCollection.RemoveTicket();
+                ticketCollection.RemoveTicket(ticket);
                 Thread.sleep(customerRetrievalRate);
             }
         }catch(InterruptedException e){

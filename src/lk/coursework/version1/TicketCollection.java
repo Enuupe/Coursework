@@ -9,34 +9,25 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class TicketCollection extends Configuration{
     // define variables
-    private static TicketCollection instance;
-    private Queue<Ticket> tickets = new LinkedList<>(); // to store ticket information
+    private final Queue<Ticket> tickets = new LinkedList<>(); // to store ticket information
     private int maxTicketCapacity;
     private int totalTickets;
     private int soldTickets;
     private final Lock lock = new ReentrantLock();
-    private Map<String, Double> Eventprices = new HashMap<>(); // to store the prices according to the event
+    private final Map<String, Double> Eventprices = new HashMap<>(); // to store the prices according to the event
 
     // constructor
-    TicketCollection() {
+    public TicketCollection(int totalTickets, int maxTicketCapacity) {
         super();
     }
 
-    public static TicketCollection getInstance() {
-        if (instance == null) {
-            instance = new TicketCollection();
-        }
-        return instance;
-    }
-
-    public synchronized boolean addTicket(Ticket ticket) {
+    public boolean addTicket(Ticket ticket) {
 
         lock.lock();
         try {
             if (tickets.size() < maxTicketCapacity) {
                 tickets.add(ticket);
-                System.out
-                        .println("The ticket " + ticket.getticket_id() + "for :" + ticket.getEventName() + " is added");
+                System.out.println("The ticket " + ticket.getticket_id() + "for :" + ticket.getEventName() + " is added");
                 totalTickets++;
                 return true;
             } else {
@@ -49,12 +40,12 @@ public class TicketCollection extends Configuration{
         }
     }
 
-    public synchronized Ticket RemoveTicket() {
+    public Ticket RemoveTicket(Ticket ticket) {
 
         lock.lock();
         try {
             if (!tickets.isEmpty()) {
-                Ticket ticket = tickets.poll();
+                ticket = tickets.poll();
                 System.out.println("The ticket is here: " + ticket.getticket_id() + " for event: "
                         + ticket.getEventName() + " for: Rs." + ticket.getprice());
                 soldTickets++;
