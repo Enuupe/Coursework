@@ -1,12 +1,0 @@
-
-‹
-java:S2095"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(Áù»Ô8µÖ¹Æ«2J$f6e710ee-c4fb-4c4e-92dc-b37e04e152fa
-´
-java:S4165"qRemove this useless assignment; "ticketReleaseAmount" already holds the assigned value along all execution paths.(õî÷ß8”õÆÆ«2J$e4f11379-d1f0-49d8-a6b1-075774d7487e
-€
-java:S1172"8Remove this unused method parameter "ticketReleaseDate".(¾ŽÓöûÿÿÿÿ8”õÆÆ«2J$c3611ba6-5489-403f-9b82-5904c78ef701
-r
-java:S1656"/Remove or correct this useless self-assignment.(õî÷ß8¤õÆÆ«2J$9a75ef41-95d9-4e1e-8ee8-972e63aa41a1
-s
-java:S1068
-"0Remove this unused "totalTickets" private field.(öÍ·²8ÝÖ¹Æ«2J$3f721a91-318e-489c-88c2-9a98bbf35ae5
